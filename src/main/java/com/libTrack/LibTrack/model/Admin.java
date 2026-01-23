@@ -1,4 +1,8 @@
 package com.libTrack.LibTrack.model;
 
-public class Admin extends Bibliotecario{
+import jakarta.persistence.Entity;
+
+@Entity
+public class Admin extends Usuario{
+
 }
