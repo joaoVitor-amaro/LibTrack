@@ -5,6 +5,7 @@ import com.libTrack.LibTrack.dto.request.BibliotecarioCreateRequest;
 import com.libTrack.LibTrack.dto.response.ApiResponse;
 import com.libTrack.LibTrack.exception.RegraNegocioException;
 import com.libTrack.LibTrack.model.Bibliotecario;
+import com.libTrack.LibTrack.model.enums.StatusUser;
 import com.libTrack.LibTrack.model.enums.TyperUser;
 import com.libTrack.LibTrack.repository.BibliotecarioRepository;
 import com.libTrack.LibTrack.repository.UsuarioRepository;
@@ -39,6 +40,7 @@ public class AdminService {
         bibliotecario.setEmail(bibliotecarioCreateRequest.getEmail());
         bibliotecario.setTelefone(bibliotecarioCreateRequest.getTelefone());
         bibliotecario.setTyperUser(TyperUser.BIBLIOTECARIO);
+        bibliotecario.setStatusUser(StatusUser.PENDENTE);
         this.bibliotecarioRepository.save(bibliotecario);
         return new BIbliotecarioDTO(bibliotecario);
     }
