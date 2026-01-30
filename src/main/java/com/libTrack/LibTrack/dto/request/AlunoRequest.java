@@ -1,0 +1,39 @@
+package com.libTrack.LibTrack.dto.request;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public class AlunoRequest {
+    @NotNull(message = "Matrícula é obrigatório")
+    private Long matricula;
+    @NotBlank(message = "Nome é obrigatório")
+    private String nome;
+    @NotBlank(message = "Email é obrigatório")
+    @Email
+    private String email;
+    @NotBlank(message = "Telefone é obrigatório")
+    private String telefone;
+    @NotBlank(message = "Turma é obrigatório")
+    private String turma;
+
+    public Long getMatricula() {
+        return matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getTurma() {
+        return turma;
+    }
+}
