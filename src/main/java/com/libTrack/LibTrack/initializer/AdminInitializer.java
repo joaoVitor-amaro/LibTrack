@@ -1,6 +1,7 @@
 package com.libTrack.LibTrack.initializer;
 
 import com.libTrack.LibTrack.model.Admin;
+import com.libTrack.LibTrack.model.enums.StatusUser;
 import com.libTrack.LibTrack.model.enums.TyperUser;
 import com.libTrack.LibTrack.repository.AdminRepository;
 import jakarta.annotation.PostConstruct;
@@ -27,6 +28,7 @@ public class AdminInitializer {
             admin.setEmail("admin@library.com");
             admin.setTelefone("(83) 98788-6513");
             admin.setTyperUser(TyperUser.ADMIN);
+            admin.setStatusUser(StatusUser.ATIVADO);
             adminRepository.save(admin);
         }
     }
