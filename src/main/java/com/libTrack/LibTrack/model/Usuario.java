@@ -1,5 +1,6 @@
 package com.libTrack.LibTrack.model;
 
+import com.libTrack.LibTrack.model.enums.StatusUser;
 import com.libTrack.LibTrack.model.enums.TyperUser;
 import jakarta.persistence.*;
 
@@ -25,6 +26,9 @@ public abstract class Usuario {
     @Enumerated(EnumType.STRING)
     @Column(name = "typeuser", nullable = false)
     private TyperUser typerUser;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private StatusUser statusUser;
 
     public Long getId() {
         return id;
@@ -88,5 +92,13 @@ public abstract class Usuario {
 
     public void setTyperUser(TyperUser typerUser) {
         this.typerUser = typerUser;
+    }
+
+    public StatusUser getStatusUser() {
+        return statusUser;
+    }
+
+    public void setStatusUser(StatusUser statusUser) {
+        this.statusUser = statusUser;
     }
 }
