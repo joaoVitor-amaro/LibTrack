@@ -25,7 +25,7 @@ public class BibliotecarioController {
 
     @PostMapping("/alunos")
     public ResponseEntity<ApiResponse<AlunoResponse>> cadastroAluno(@RequestBody @Valid AlunoRequest alunoRequest) {
-        AlunoResponse aluno = this.bibliotecarioService.cadastrarBibliotecario(alunoRequest);
+        AlunoResponse aluno = this.bibliotecarioService.cadastrarAluno(alunoRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>(
                 HttpStatus.CREATED.value(),
                 "Aluno cadastrado",
