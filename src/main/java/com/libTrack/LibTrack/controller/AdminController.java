@@ -23,7 +23,7 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @PostMapping("/cadastrarBibliotecario")
+    @PostMapping("/bibliotecarios")
     public ResponseEntity<ApiResponse<BIbliotecarioDTO>> cadastroBibliotecario(@RequestBody @Valid BibliotecarioCreateRequest bibliotecarioCreateRequest) {
         BIbliotecarioDTO response = adminService.cadastroBibliotecario(bibliotecarioCreateRequest);
         return ResponseEntity
