@@ -39,14 +39,7 @@ public class BibliotecarioService {
             throw new RegraNegocioException("E-mail já cadastrado");
         }
 
-        Aluno aluno = new Aluno();
-        aluno.setMatricula(alunoRequest.getMatricula());
-        aluno.setNome(alunoRequest.getNome());
-        aluno.setEmail(alunoRequest.getEmail());
-        aluno.setTelefone(alunoRequest.getTelefone());
-        aluno.setTurma(alunoRequest.getTurma());
-        aluno.setTyperUser(TyperUser.ALUNO);
-        aluno.setStatusUser(StatusUser.PENDENTE);
+        Aluno aluno = new Aluno(alunoRequest);
         String token = this.tokenAtivacaoService.gerarToken();
         this.emailService.sendEmail(
                 aluno.getEmail(),
