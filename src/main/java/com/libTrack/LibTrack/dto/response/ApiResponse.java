@@ -11,6 +11,8 @@ public class ApiResponse<T> {
     private LocalDateTime timestamp;
     private T data;
 
+    public ApiResponse() {}
+
     public ApiResponse(int code, String message, LocalDateTime timestamp, T data) {
         this.code = code;
         this.message = message;
