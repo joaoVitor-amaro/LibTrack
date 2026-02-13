@@ -30,6 +30,17 @@ public abstract class Usuario {
     @Column(name = "status")
     private StatusUser statusUser;
 
+    public Usuario() {}
+
+    public Usuario(long matricula, String nome, String email, String telefone, TyperUser typerUser, StatusUser statusUser) {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.typerUser = typerUser;
+        this.statusUser = statusUser;
+    }
+
     public Long getId() {
         return id;
     }
